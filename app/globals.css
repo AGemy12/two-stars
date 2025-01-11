@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --wihte: #ffffff;
+  --light_opacity_bg: rgba(0, 0, 0, 0.9);
+  --gold: #964b00;
+  --gold: #b58e51;
+  --off_wihte: rgba(255, 255, 255, 0.8);
+  --light_black: rgba(0, 0, 0, 0.9);
+  --light_gold: rgba(181, 142, 81, 0.9);
+}
+
+body {
+  font-family: var(--font_cairo);
+  background-color: black;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Start :: Customization Scrollbar */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--off_wihte);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 10px;
+}
+/* End :: Customization Scrollbar */
+
+/* Start :: Cursor Pointer Style */
+.pointer-inner {
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+.pointer-outer {
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+.pointer-inner,
+.pointer-outer {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.pointer-inner {
+  width: 10px;
+  height: 10px;
+  top: -5px;
+  left: -5px;
+  background-color: #fff;
+  mix-blend-mode: difference;
+}
+
+.pointer-outer {
+  width: 40px;
+  height: 40px;
+  top: -20px;
+  left: -20px;
+  /* border: 1px solid var(--gold); */
+  background-color: rgba(255, 255, 255, 0.2);
+}
+/* End :: Cursor Pointer Style */
