@@ -16,7 +16,6 @@ export default function ServiceCard({
   serviceImgSrc,
   serviceImgAlt,
   serviceImgTitle,
-  serviceLink,
 }: ServicePropsTypes) {
   return (
     <div className="group rounded-md overflow-hidden shadow-light_shadow">

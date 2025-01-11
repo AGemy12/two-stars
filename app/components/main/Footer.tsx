@@ -1,7 +1,6 @@
 import React from "react";
 import LinkItem from "../pieces/LinkItem";
 import FooterSectionsTitle from "../pieces/FooterSectionsTitle";
-import Link from "next/link";
 import Logo from "./Logo";
 
 export default function Footer() {

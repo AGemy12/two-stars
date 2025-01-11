@@ -84,11 +84,6 @@ export default function HeroSection() {
   };
 
   // Function to go to the previous item
-  const goToPreviousItem = () => {
-    setCurrentItemIndex(
-      (prevIndex) => (prevIndex - 1 + HeroData.length) % HeroData.length
-    );
-  };
 
   useEffect(() => {
     // Set interval for automatic slide transition
