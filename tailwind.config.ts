@@ -31,9 +31,12 @@ export default {
         sticky_header: "sticky_header 0.75s linear",
         carousel_text: "carousel_text 4s ease-in-out",
         carousel_text_container: "carousel_text_container 3s  ease-in-out",
+        carousel_text_container_mobile:
+          "carousel_text_container_mobile 3s  ease-in-out",
         hero_carousel: "hero_carousel 2.5s  ease-in-out",
         forward_arrow: "forward_arrow 1s  ease-in-out infinite",
         backward_arrow: "backward_arrow 1s  ease-in-out infinite",
+        menu_bar: "menu_bar 2s linear infinite",
       },
       keyframes: {
         sticky_header: {
@@ -102,6 +105,17 @@ export default {
           },
           "100%": {
             height: "200px",
+          },
+        },
+        carousel_text_container_mobile: {
+          "0%": {
+            height: "0px",
+          },
+          "80%": {
+            height: "0px",
+          },
+          "100%": {
+            height: "80px",
           },
         },
       },

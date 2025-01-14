@@ -16,6 +16,7 @@ export default function ContactItem({
     <div>
       <Link
         href={path}
+        target="_blank"
         className="group relative p-2 flex items-center justify-center rounded-full !duration-300  hover:shadow-spread overflow-hidden hover:overflow-visible"
       >
         {icon}

@@ -12,7 +12,7 @@ import Link from "next/link";
 const actions = [
   {
     icon: (
-      <Link href="">
+      <Link href="" target="_blank">
         <FaTiktok />
       </Link>
     ),
@@ -20,7 +20,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="">
+      <Link href="https://wa.me/+966557243381" target="_blank">
         <FaWhatsapp />{" "}
       </Link>
     ),
@@ -28,7 +28,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="">
+      <Link href="" target="_blank">
         <FaInstagram />{" "}
       </Link>
     ),
@@ -36,7 +36,7 @@ const actions = [
   },
   {
     icon: (
-      <Link href="">
+      <Link href="" target="_blank">
         <FaFacebookF />{" "}
       </Link>
     ),
@@ -56,7 +56,7 @@ export default function ContactsLinks() {
                 icon={
                   <FaWhatsapp className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
                 }
-                path="##"
+                path="https://wa.me/+966557243381"
               />
               <ContactItem
                 title="Facebook"

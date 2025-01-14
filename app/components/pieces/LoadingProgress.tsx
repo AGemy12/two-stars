@@ -50,7 +50,7 @@ export default function CircularWithValueLabel() {
         setProgress((prevProgress) =>
           prevProgress >= 100 ? 100 : prevProgress + 10
         );
-      }, 300); // 3 seconds total for 100% progress (300ms x 10)
+      }, 100);
 
       const loadingTimeout = setTimeout(() => {
         setIsLoading(false); // Stop loading after 3 seconds

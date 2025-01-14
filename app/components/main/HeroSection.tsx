@@ -91,7 +91,7 @@ export default function HeroSection() {
   const sliderWidth = HeroData.length * 100 + "vw";
 
   return (
-    <section className=" relative w-screen md:h-screen z-10 overflow-hidden mb-12 md:mb-[100px]">
+    <section className=" relative h-auto md:w-screen md:h-screen z-10 overflow-hidden mb-12 md:mb-[100px]">
       <div
         className="flex relative"
         style={{
@@ -104,11 +104,8 @@ export default function HeroSection() {
         {HeroData.map((item, index) => {
           const isActive = index === currentItemIndex;
           return (
-            <div
-              key={item.id}
-              className={` slide-item relative flex-shrink-0 md:w-screen `}
-            >
-              <div className="flex items-center justify-center w-full h-screen relative before:absolute before:w-full before:h-full before:bg-[rgba(0,0,0,0.2)]">
+            <div key={item.id} className={` slide-item relative  w-screen `}>
+              <div className="flex items-start md:items-center justify-center w-full h-auto md:h-screen relative before:absolute before:w-full before:h-full before:bg-[rgba(0,0,0,0.2)]">
                 <img
                   src={item.img}
                   alt={item.alt}
@@ -118,12 +115,14 @@ export default function HeroSection() {
                 />
               </div>
               <div
-                className={`absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2  font-bold leading-[50px] sm:leading-[70px] bg-[rgba(0,0,0,0.6)] w-full h-[200px] text-center flex items-center justify-center overflow-hidden ${
-                  isActive ? "animate-carousel_text_container" : ""
+                className={`absolute top-1/2 -translate-y-1/2 left-1/2 -translate-x-1/2  font-bold leading-[50px] sm:leading-[70px] bg-[rgba(0,0,0,0.6)] w-full h-[80px] md:h-[200px] text-center flex items-center justify-center overflow-hidden ${
+                  isActive
+                    ? "animate-carousel_text_container_mobile md:animate-carousel_text_container"
+                    : ""
                 }`}
               >
                 <span
-                  className={`block text-white text-[30px] sm:text-[50px] p-4 ${
+                  className={`block text-white text-[1rem] md:text-[30px] sm:text-[50px] p-4 ${
                     isActive ? "animate-carousel_text" : ""
                   }`}
                 >
@@ -145,15 +144,15 @@ export default function HeroSection() {
               <li
                 key={item.id}
                 onClick={() => goToItem(index)}
-                className={` slide-change-button flex items-center gap-1 md:gap-2 duration-300 font-bold text-[0.9rem] md:text-[1.1rem] ${
+                className={` slide-change-button flex items-center gap-1 md:gap-2 duration-300 font-bold text-[0.8rem] md:text-[1.1rem] ${
                   index === currentItemIndex
-                    ? "active text-gold scale-[1.3] "
+                    ? "active text-gold scale-[1.1] md:scale-[1.3] "
                     : "text-white scale-[1] "
-                }  mb-[10px] cursor-pointer`}
+                }  mb-1 md:mb-[10px] cursor-pointer`}
               >
                 <span>{formatIndex(index)}</span>
                 <span
-                  className={`w-[10px] md:w-[20px] h-[2px] md:h-[3px] bg-white ${
+                  className={`w-[10px]  md:w-[20px] h-[2px] md:h-[3px] bg-white ${
                     index === currentItemIndex
                       ? "active !bg-gold"
                       : "text-white"

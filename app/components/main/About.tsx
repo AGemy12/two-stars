@@ -7,6 +7,7 @@ import { useEffect } from "react";
 
 export default function About() {
   const [activeTab, setActiveTab] = useState(1);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const tabContent = [
     {
@@ -61,6 +62,14 @@ export default function About() {
   ];
   const activeTabData = tabContent.find((tab) => tab.id === activeTab);
 
+  const handleTabChange = (tabId: number) => {
+    setIsTransitioning(true);
+    setTimeout(() => {
+      setActiveTab(tabId);
+      setIsTransitioning(false);
+    }, 300);
+  };
+
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -73,25 +82,22 @@ export default function About() {
     <section className="mb-12 md:mb-[100px]">
       <SectionTitle title="من نحن ؟" />
       <div className="container mx-auto my-8">
-        <div className="flex justify-center md:justify-start gap-4 mb-6">
+        <div className="flex justify-center md:justify-start gap-2 md:gap-4 mb-6">
           {tabContent.map((tab) => (
             <button
               key={tab.id}
-              className={`px-2 md:px-3 py-1 border-b-2 text-[0.80rem] md:text-[1rem] rounded-md duration-300 hover:text-black hover:bg-gold ${
+              className={`px-2 md:px-3 py-1 border-b-2 text-[0.80rem] md:text-[1rem] rounded-md duration-300 hover:text-black hover:bg-gold text-nowrap ${
                 activeTab === tab.id
                   ? "border-gold text-black bg-gold"
                   : "border-gold border-[2px] text-gold"
               }`}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => handleTabChange(tab.id)}
             >
               {tab.title}
             </button>
           ))}
         </div>
-        <div
-          className="text-lg text-gray-800 flex items-center md:items-start justify-center md:justify-start gap-10 flex-wrap md:flex-nowrap"
-          data-aos="fade-left"
-        >
+        <div className="text-lg text-gray-800 flex items-center md:items-start justify-center md:justify-start gap-10 flex-wrap md:flex-nowrap">
           {activeTabData ? (
             activeTabData.type === "p" ? (
               <>
