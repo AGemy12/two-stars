@@ -5,69 +5,63 @@ export default function HeroSection() {
   const HeroData = [
     {
       id: 1,
-      title: "بناء مشاريع من البداية (معامل – مصانع)",
-      img: "/assets/media/hero-carousel/building-projects.jpg",
-      alt: "بناء مشاريع من البداية (معامل – مصانع)",
-    },
-    {
-      id: 2,
-      title: "تحسين بيئة وجودة العمل",
-      img: "/assets/media/hero-carousel/business-development.jpg",
-      alt: "تحسين بيئة وجودة العمل",
-    },
-    {
-      id: 3,
-      title: "تطوير معامل ومصانع الشوكولاته",
-      img: "/assets/media/hero-carousel/chocolate-factories.jpg",
-      alt: "تطوير معامل ومصانع الشوكولاته",
-    },
-    {
-      id: 4,
       title: "تطوير خطوط إنتاج المصانع",
       img: "/assets/media/hero-carousel/factory-production.jpg",
       alt: "تطوير خطوط إنتاج المصانع",
     },
     {
-      id: 5,
-      title: "عقود استشارية لتطوير الأعمال",
-      img: "/assets/media/hero-carousel/quality-of-work.jpg",
-      alt: "عقود استشارية لتطوير الأعمال",
-    },
-    {
-      id: 6,
-      title: "تطوير معامل ومصانع الأغذية",
-      img: "/assets/media/hero-carousel/food-factories.jpg",
-      alt: "تطوير معامل ومصانع الأغذية",
-    },
-    {
-      id: 7,
-      title: "تنظيم إدارة الموارد البشرية (HR)",
-      img: "/assets/media/hero-carousel/hr-regulation.jpg",
-      alt: "تنظيم إدارة الموارد البشرية (HR)",
-    },
-    {
-      id: 8,
+      id: 2,
       title: "تصميم وتصنيع آلات حسب الطلب",
       img: "/assets/media/hero-carousel/machinery-design.jpg",
       alt: "تصميم وتصنيع آلات حسب الطلب",
     },
     {
-      id: 9,
-      title: "تطوير خطط مبيعات ومشتريات",
-      img: "/assets/media/hero-carousel/sales-and-purchases.jpg",
-      alt: "تطوير خطط مبيعات ومشتريات",
+      id: 3,
+      title: "بناء مشاريع من البداية (معامل – مصانع)",
+      img: "/assets/media/hero-carousel/building-projects.jpg",
+      alt: "بناء مشاريع من البداية (معامل – مصانع)",
     },
     {
-      id: 10,
+      id: 4,
+      title: "تطوير معامل ومصانع الحلويات والشوكولاتة",
+      img: "/assets/media/hero-carousel/sweets-factories.jpg",
+      alt: "تطوير معامل ومصانع الحلويات والشوكولاتة",
+    },
+    {
+      id: 5,
+      title: "تطوير معامل ومصانع الأغذية",
+      img: "/assets/media/hero-carousel/food-factories.jpg",
+      alt: "تطوير معامل ومصانع الأغذية",
+    },
+    {
+      id: 6,
       title: "تطوير خطط استراتيجية",
       img: "/assets/media/hero-carousel/strategic-plans.jpg",
       alt: "تطوير خطط استراتيجية",
     },
     {
-      id: 11,
-      title: "تطوير معامل ومصانع الحلويات والشوكولاتة",
-      img: "/assets/media/hero-carousel/sweets-factories.jpg",
-      alt: "تطوير معامل ومصانع الحلويات والشوكولاتة",
+      id: 7,
+      title: "تطوير خطط مبيعات ومشتريات",
+      img: "/assets/media/hero-carousel/sales-and-purchases.jpg",
+      alt: "تطوير خطط مبيعات ومشتريات",
+    },
+    {
+      id: 8,
+      title: "تنظيم إدارة الموارد البشرية (HR)",
+      img: "/assets/media/hero-carousel/hr-regulation.jpg",
+      alt: "تنظيم إدارة الموارد البشرية (HR)",
+    },
+    {
+      id: 9,
+      title: "تحسين بيئة وجودة العمل",
+      img: "/assets/media/hero-carousel/business-development.jpg",
+      alt: "تحسين بيئة وجودة العمل",
+    },
+    {
+      id: 10,
+      title: "عقود استشارية لتطوير الأعمال",
+      img: "/assets/media/hero-carousel/quality-of-work.jpg",
+      alt: "عقود استشارية لتطوير الأعمال",
     },
   ];
 
@@ -97,7 +91,7 @@ export default function HeroSection() {
   const sliderWidth = HeroData.length * 100 + "vw";
 
   return (
-    <section className=" relative w-screen md:h-screen z-10 overflow-hidden mb-12 ">
+    <section className=" relative w-screen md:h-screen z-10 overflow-hidden mb-12 md:mb-[100px]">
       <div
         className="flex relative"
         style={{

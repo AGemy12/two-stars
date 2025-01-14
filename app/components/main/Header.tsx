@@ -9,11 +9,11 @@ export default function Header() {
   const { isSticky } = useContext(ContextStates);
   return (
     <header
-      className={` h-[80px] ${
+      className={`py-2 ${
         isSticky
           ? "sticky top-0 right-0 animate-sticky_header !bg-black shadow-md"
           : "absolute right-0 top-0"
-      } z-50 w-full h-[70px] flex items-center transition-all duration-500  py-2 bg-light_opacity_bg`}
+      } z-50 w-full flex items-center transition-all duration-500  bg-light_opacity_bg`}
     >
       <div className="container flex items-center justify-between">
         <MobileMenuBtn />

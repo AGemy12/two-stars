@@ -1,81 +1,119 @@
 "use client";
-import { useContext } from "react";
-import { ContextStates } from "@/lib/context/Store";
 import ContactItem from "../pieces/ContactItem";
+import * as React from "react";
+import Box from "@mui/material/Box";
+import SpeedDial from "@mui/material/SpeedDial";
+import SpeedDialIcon from "@mui/material/SpeedDialIcon";
+import SpeedDialAction from "@mui/material/SpeedDialAction";
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaTiktok } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
-import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
+import Link from "next/link";
+
+const actions = [
+  {
+    icon: (
+      <Link href="">
+        <FaTiktok />
+      </Link>
+    ),
+    name: "Tiktok",
+  },
+  {
+    icon: (
+      <Link href="">
+        <FaWhatsapp />{" "}
+      </Link>
+    ),
+    name: "WhatsApp",
+  },
+  {
+    icon: (
+      <Link href="">
+        <FaInstagram />{" "}
+      </Link>
+    ),
+    name: "Instagram",
+  },
+  {
+    icon: (
+      <Link href="">
+        <FaFacebookF />{" "}
+      </Link>
+    ),
+    name: "Facebook",
+  },
+];
 
 export default function ContactsLinks() {
-  const { isClosed, toggleClosed } = useContext(ContextStates);
   return (
-    <div
-      className={`fixed top-1/2 -translate-y-1/2 z-50 ${
-        isClosed ? "left-0" : "left-4"
-      } `}
-    >
-      <div className="relative">
-        <button
-          className="absolute left-1/2 -translate-x-1/2 bottom-full"
-          onClick={toggleClosed}
-        >
-          {isClosed ? (
-            <>
-              {" "}
-              <MdOutlineKeyboardDoubleArrowRight className="animate-backward_arrow text-3xl text-white duration-300 hover:text-gold " />
-            </>
-          ) : (
-            <>
-              {" "}
-              <MdOutlineKeyboardDoubleArrowLeft className="animate-forward_arrow text-3xl text-white duration-300 hover:text-gold " />
-            </>
-          )}
-        </button>
-        <div className="">
-          <div
-            className={`${
-              isClosed ? "-translate-x-[calc(100%+50px)]" : null
-            } transition-all duration-500 flex flex-col justify-center items-center gap-3 p-3 bg-light_black rounded-md shadow-sm`}
-          >
-            <ContactItem
-              title="WhatsApp"
-              icon={
-                <FaWhatsapp className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
-              }
-              path="##"
-            />
-            <ContactItem
-              title="Facebook"
-              icon={
-                <FaFacebookF className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
-              }
-              path="##"
-            />
-            <ContactItem
-              title="Instagram"
-              icon={
-                <FaInstagram className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
-              }
-              path="##"
-            />
-            <ContactItem
-              title="TikTok"
-              icon={
-                <FaTiktok className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
-              }
-              path="##"
-            />
-            <ContactItem
-              title="Twitter"
-              icon={
-                <FaXTwitter className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
-              }
-              path="##"
-            />
+    <>
+      <div className="fixed bottom-0 md:top-1/2 translate-y-0  md:-translate-y-1/2 left-4 z-50 ">
+        <div className="relative md:block hidden">
+          <div className="">
+            <div className="transition-all duration-500 flex flex-col justify-center items-center gap-3 p-3 bg-light_black rounded-md shadow-sm">
+              <ContactItem
+                title="WhatsApp"
+                icon={
+                  <FaWhatsapp className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
+                }
+                path="##"
+              />
+              <ContactItem
+                title="Facebook"
+                icon={
+                  <FaFacebookF className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
+                }
+                path="##"
+              />
+              <ContactItem
+                title="Instagram"
+                icon={
+                  <FaInstagram className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
+                }
+                path="##"
+              />
+              <ContactItem
+                title="TikTok"
+                icon={
+                  <FaTiktok className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
+                }
+                path="##"
+              />
+              <ContactItem
+                title="Twitter"
+                icon={
+                  <FaXTwitter className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
+                }
+                path="##"
+              />
+            </div>
           </div>
         </div>
+        <Box
+          sx={{
+            height: 320,
+            transform: "translateZ(0px)",
+            flexGrow: 1,
+            "& .MuiButtonBase-root": { backgroundColor: "var(--gold)" },
+            "& .MuiButtonBase-root:hover": { backgroundColor: "var(--gold)" },
+          }}
+          className="block md:hidden w-16 "
+        >
+          <SpeedDial
+            ariaLabel="SpeedDial basic example"
+            sx={{ position: "absolute", bottom: 16, right: 16 }}
+            icon={<SpeedDialIcon />}
+          >
+            {actions.map((action) => (
+              <SpeedDialAction
+                key={action.name}
+                icon={action.icon}
+                tooltipTitle={action.name}
+              />
+            ))}
+          </SpeedDial>
+        </Box>
       </div>
-    </div>
+    </>
   );
 }

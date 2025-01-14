@@ -1,5 +1,6 @@
 "use client";
 import { createContext, useState, useEffect, ReactNode } from "react";
+import LoadingProgress from "@/app/components/pieces/LoadingProgress";
 
 interface ContextProps {
   isSticky: boolean;
@@ -20,6 +21,17 @@ export const ContextStates = createContext<ContextProps>({
 export const StickyProvider = ({ children }: ProviderProps) => {
   const [isSticky, setIsSticky] = useState(false);
   const [isClosed, setIsClosed] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const loadingTimeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => {
+      clearTimeout(loadingTimeout);
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +53,14 @@ export const StickyProvider = ({ children }: ProviderProps) => {
 
   return (
     <ContextStates.Provider value={{ isSticky, isClosed, toggleClosed }}>
-      {children}
+      {isLoading ? (
+        <>
+          {" "}
+          <LoadingProgress />{" "}
+        </>
+      ) : (
+        <> {children}</>
+      )}
     </ContextStates.Provider>
   );
 };

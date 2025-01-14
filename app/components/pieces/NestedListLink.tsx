@@ -17,15 +17,15 @@ export default function NestedListLink({
 }: NavbarPropsTypes) {
   const pathName = usePathname();
   return (
-    <li className="relative">
+    <li className="relative w-fit">
       <Link
         href={path}
-        className={` block text-off_wihte font-bold duration-300 px-4 py-3 ${
+        className={` block  text-off_wihte font-bold duration-300  py-3 ${
           pathName === path ? "after:shadow-text_spread" : ""
         } ${customLinkStyle}`}
       >
         <span
-          className={`relative after:absolute after:top-1/2 after:-translate-y-1/2 rtl:after:-left-4 after:w-2 after:h-2 after:rotate-45 after:border-[1px] after:border-off_wihte after:duration-300 hover:after:shadow-text_spread duration-300 hover:[text-shadow:1px_1px_6px_#b58e51,1px_1px_6px_#b58e51,1px_1px_6px_#b58e51] ${
+          className={`block relative after:absolute after:top-1/2 after:-translate-y-1/2 rtl:after:-left-4 after:w-2 after:h-2 after:rotate-45 after:border-[1px] after:border-off_wihte after:duration-300 hover:after:shadow-text_spread duration-300 hover:[text-shadow:1px_1px_6px_#b58e51,1px_1px_6px_#b58e51,1px_1px_6px_#b58e51] text-nowrap ${
             pathName === path
               ? "[text-shadow:1px_1px_6px_#b58e51,1px_1px_6px_#b58e51,1px_1px_6px_#b58e51] after:shadow-text_spread"
               : ""

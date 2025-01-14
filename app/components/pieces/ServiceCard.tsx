@@ -3,11 +3,14 @@ import MainButton from "./MainButton";
 
 interface ServicePropsTypes {
   serviceTitle: string;
+  serviceName: string;
   serviceDescription: string;
   serviceImgSrc: string;
   serviceImgAlt?: string;
   serviceImgTitle?: string;
-  serviceLink: string;
+  containerIsOpen: boolean;
+  handleCloseModelBtn: () => void;
+  fireOnClickEvent: () => void;
 }
 
 export default function ServiceCard({
@@ -16,6 +19,7 @@ export default function ServiceCard({
   serviceImgSrc,
   serviceImgAlt,
   serviceImgTitle,
+  fireOnClickEvent,
 }: ServicePropsTypes) {
   return (
     <div className="group rounded-md overflow-hidden shadow-light_shadow">
@@ -31,7 +35,11 @@ export default function ServiceCard({
             {serviceDescription}{" "}
           </p>
           <div className="w-fit mx-auto ">
-            <MainButton hasLink={true} title="تفاصيل الخدمة" href="##" />
+            <MainButton
+              title="تفاصيل الخدمة"
+              onClick={fireOnClickEvent}
+              hasLink={false}
+            />
           </div>
         </div>
       </div>

@@ -3,13 +3,13 @@ import React from "react";
 
 export default function Logo({ logoStyle }: { logoStyle?: string }) {
   return (
-    <div className="w-[100px]">
+    <div className={`w-[100px] ${logoStyle}`}>
       <Link href="/">
         <img
           src="/assets/media/logo/logo_svg.svg"
           alt="Two Stars Logo"
           title="Two Stars Logo"
-          className={`w-full ${logoStyle} `}
+          className="w-full"
         />
       </Link>
     </div>
