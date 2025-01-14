@@ -109,7 +109,7 @@ export default function ServiceDetails({
             <div data-aos="zoom-in">
               <MainButton
                 hasLink={true}
-                path="https://web.whatsapp.com/send?phone=966557243381&text="
+                path="https://wa.me/+966557243381"
                 title="اطلب الخدمة"
                 customStyle="hover:!text-off_wihte min-w-[200px]"
               />

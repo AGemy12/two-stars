@@ -113,7 +113,7 @@ export default function Footer() {
             <div className="flex items-center gap-2">
               <StayCurrentPortraitIcon className="!text-gold !text-xl md:text-2xl" />
               <Link
-                href="https://web.whatsapp.com/send?phone=966536630500&text="
+                href="https://wa.me/+966557243381"
                 target="_blank"
                 className="block hover:underline"
               >
