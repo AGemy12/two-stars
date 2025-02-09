@@ -1,3 +1,4 @@
+import { transform } from "next/dist/build/swc/generated-native";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -10,11 +11,15 @@ export default {
     extend: {
       backgroundImage: {
         section_bg: "url('/assets/media/logo/logo.png')",
+        about_vesion: "url('/assets/media/about/vesion.jpg')",
+        about_founder_speech: "url('/assets/media/about/founder_speech.jpg')",
+        about_message: "url('/assets/media/about/message.jpg')",
+        about_golas: "url('/assets/media/about/golas.jpg')",
       },
       colors: {
         off_wihte: "var(--off_wihte)",
         light_opacity_bg: "var(--light_opacity_bg)",
-        brown: "var(--gold)",
+        gray_text: "var(--gray_text)",
         gold: "var(--gold)",
         white: "var(--wihte)",
         light_black: "var(--light_black)",
@@ -26,6 +31,7 @@ export default {
           "1px 1px 6px #b58e51,1px 1px 6px #b58e51,1px 1px 6px #b58e51",
         light_shadow:
           "0px 0px 6px #b58e51, 0px 0px 0px #b58e51, 0px 0px 0px #b58e51",
+        white_shadow: "rgba(255, 255, 255, 0.4) 0px 1px 4px",
       },
       animation: {
         sticky_header: "sticky_header 0.75s linear",
@@ -37,6 +43,7 @@ export default {
         forward_arrow: "forward_arrow 1s  ease-in-out infinite",
         backward_arrow: "backward_arrow 1s  ease-in-out infinite",
         menu_bar: "menu_bar 2s linear infinite",
+        top_down: "top_down 3s ease-in-out infinite",
       },
       keyframes: {
         sticky_header: {
@@ -116,6 +123,17 @@ export default {
           },
           "100%": {
             height: "80px",
+          },
+        },
+        top_down: {
+          "0%": {
+            transform: "scale(1)",
+          },
+          "50%": {
+            transform: "scale(1.05)",
+          },
+          "100%": {
+            transform: "scale(1)",
           },
         },
       },

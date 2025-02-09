@@ -1,132 +1,44 @@
 import React from "react";
-import LinkItem from "../pieces/LinkItem";
-import FooterSectionsTitle from "../pieces/FooterSectionsTitle";
 import Logo from "./Logo";
-
-import EmailIcon from "@mui/icons-material/Email";
-import StayCurrentPortraitIcon from "@mui/icons-material/StayCurrentPortrait";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import ContactItem from "../pieces/ContactItem";
+import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { IoCall } from "react-icons/io5";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-black shadow-spread py-4 mt-8">
-      <div className="container flex items-start justify-center md:justify-between md:flex-nowrap flex-wrap pt-8 border-b-[1px] border-b-gold my-4">
-        <div className="max-w-[350px] flex flex-col gap-4 justify-center items-center">
-          <Logo />
-          <p className="w-full p-4 md:p-0 md:w-5/6 mx-auto text-off_wihte text-[0.9rem] md:text-[1rem] text-justify">
-            مجموعة تو ستارز تقدم خدمات متكاملة ومتطورة في مجال تطوير الأعمال
-            الصناعية والتجارية، مع التركيز على الابتكار، الجودة، وتلبية
-            .احتياجات العملاء بشكل كامل. نحن ملتزمون بجعل عمليات الإنتاج أكثر
-            كفاءة، وتعزيز الاستدامة البيئية والاجتماعية
-          </p>
-        </div>
-        <div className="w-fit mb-4 md:mb-0">
-          <FooterSectionsTitle title="خدماتنا" />
-          <div className="flex items-start justify-between w-full">
-            <div className="flex items-start justify-center md:justify-start md:flex-nowrap flex-wrap  gap-0 md:gap-2 mx-auto  md:py-4 mt-4 mb-0 ">
-              <ul className="w-fit flex items-center md:items-start justify-center flex-col p-4 md:py-[unset] py-0 relative before:absolute before:-left-1 before:top-0  before:w-[1px] before:h-[200px] before:bg-[rgba(255,255,255,0.1)] before:hidden md:before:block">
-                <LinkItem
-                  title="تطوير خطوط إنتاج المصانع"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="تصميم وتصنيع آلات حسب الطلب"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="بناء مشاريع من البداية (معامل – مصانع)"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="تطوير معامل ومصانع الحلويات والشوكولاتة"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="تطوير معامل ومصانع الأغذية"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="تطوير معامل ومصانع الشوكولاته"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-              </ul>
-              <ul className="w-fit flex items-center md:items-start justify-center flex-col p-4  md:py-[unset] py-0">
-                <LinkItem
-                  title="تطوير خطط استراتيجية"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="تطوير خطط مبيعات ومشتريات"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="(HR) تنظيم إدارة الموارد البشرية"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="تحسين بيئة وجودة العمل"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                <LinkItem
-                  title="عقود استشارية لتطوير الأعمال"
-                  path="##"
-                  customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]"
-                  customLinkStyle="!p-0 mb-3"
-                />
-                {/* <LinkItem title="" path="##" customStyle="after:hidden text-[0.8rem] md:text-[0.85rem]" customLinkStyle="!py-0 mb-3" /> */}
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-center flex-col gap-2  mb-4 md:mb-0">
-          <FooterSectionsTitle title="تواصل معنا" />
-          <div className="flex flex-col justify-center gap-4 items-start mt-4">
-            <div className="flex items-center gap-2">
-              <EmailIcon className="!text-gold !text-xl md:text-2xl" />
-              <Link href="" className="block hover:underline">
-                <span className="text-off_wihte text-[0.9rem]">
-                  towStars@gmail.com
-                </span>
+    <footer className="bg-black border-t-[1px] shadow-md border-t-gold mt-8">
+      <div className="py-8 border-b-[1px] border-b-[rgba(255,255,255,0.1)]">
+        <div className="w-fit mx-auto flex flex-col items-center justify-center gap-8 ">
+          <Logo logoStyle="w-[200px]" />
+          <div className="flex items-center gap-4">
+            <div className="group w-[40px] h-[40px] rounded-md overflow-hidden bg-[#1f1e1e] shadow-md flex items-center justify-center duration-300 md:hover:bg-gold">
+              <Link href="#" target="_blank" className="block">
+                <IoCall className="text-gold text-3xl md:group-hover:text-[#1f1e1e]" />
               </Link>
             </div>
-            <div className="flex items-center gap-2">
-              <StayCurrentPortraitIcon className="!text-gold !text-xl md:text-2xl" />
+            <div className="group w-[40px] h-[40px] rounded-md overflow-hidden bg-[#1f1e1e] shadow-md flex items-center justify-center duration-300 md:hover:bg-gold">
               <Link
                 href="https://wa.me/+966557243381"
                 target="_blank"
-                className="block hover:underline"
+                className="block"
               >
-                <span className="text-off_wihte text-[0.9rem]">
-                  966557243381+
-                </span>
+                <FaWhatsapp className="text-gold text-3xl md:group-hover:text-[#1f1e1e]" />
               </Link>
             </div>
-            <div className="flex items-center gap-2">
-              <LocationOnIcon className="!text-gold !text-xl md:text-2xl" />
-              <span className="text-off_wihte text-[0.9rem]">
-                966557243381+
-              </span>
+            <div className="group w-[40px] h-[40px] rounded-md overflow-hidden bg-[#1f1e1e] shadow-md flex items-center justify-center duration-300 md:hover:bg-gold">
+              <Link
+                href="https://www.instagram.com/p/DEvV95OROwA/?utm_source=ig_web_copy_link"
+                target="_blank"
+                className="block"
+              >
+                <FaInstagram className="text-gold text-3xl md:group-hover:text-[#1f1e1e]" />
+              </Link>
+            </div>
+            <div className="group w-[40px] h-[40px] rounded-md overflow-hidden bg-[#1f1e1e] shadow-md flex items-center justify-center duration-300 md:hover:bg-gold">
+              <Link href="#" target="_blank" className="block">
+                <FaFacebookF className="text-gold text-3xl md:group-hover:text-[#1f1e1e]" />
+              </Link>
             </div>
           </div>
         </div>

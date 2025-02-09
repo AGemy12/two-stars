@@ -7,8 +7,8 @@ export default function Logo({ logoStyle }: { logoStyle?: string }) {
       <Link href="/">
         <img
           src="/assets/media/logo/logo_svg.svg"
-          alt="Two Stars Logo"
-          title="Two Stars Logo"
+          alt="Two Stars"
+          title="Two Stars"
           className="w-full"
         />
       </Link>

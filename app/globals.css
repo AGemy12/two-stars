@@ -5,7 +5,7 @@
 :root {
   --wihte: #ffffff;
   --light_opacity_bg: rgba(0, 0, 0, 0.9);
-  --gold: #964b00;
+  --gray_text: #2d2827;
   --gold: #b58e51;
   --off_wihte: rgba(255, 255, 255, 0.8);
   --light_black: rgba(0, 0, 0, 0.9);
@@ -14,7 +14,12 @@
 
 body {
   font-family: var(--font_cairo);
-  background-color: black;
+  background: rgb(41, 41, 41);
+  background: radial-gradient(
+    circle,
+    rgba(41, 41, 41, 1) 0%,
+    rgba(0, 0, 0, 1) 100%
+  );
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -69,3 +74,26 @@ body {
   background-color: rgba(255, 255, 255, 0.2);
 }
 /* End :: Cursor Pointer Style */
+
+.service_number {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgba(248, 178, 107, 0.2);
+  opacity: 0.3;
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.lg-backdrop {
+  direction: rtl !important;
+}
+
+.lg-outer {
+  direction: rtl !important;
+}
+
+.lg-thumb-item {
+  float: right !important;
+}

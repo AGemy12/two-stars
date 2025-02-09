@@ -47,7 +47,7 @@ const actions = [
 export default function ContactsLinks() {
   return (
     <>
-      <div className="fixed bottom-0 md:top-1/2 translate-y-0  md:-translate-y-1/2 left-4 z-50 ">
+      <div className="fixed bottom-0 md:top-1/2 translate-y-0  md:-translate-y-1/2 left-2 z-50 ">
         <div className="relative md:block hidden">
           <div className="">
             <div className="transition-all duration-500 flex flex-col justify-center items-center gap-3 p-3 bg-light_black rounded-md shadow-sm">
@@ -63,7 +63,7 @@ export default function ContactsLinks() {
                 icon={
                   <FaFacebookF className="text-off_wihte text-[1rem] md:text-[1.5rem] duration-300 group-hover:text-white " />
                 }
-                path="##"
+                path="https://www.instagram.com/p/DEvV95OROwA/?utm_source=ig_web_copy_link"
               />
               <ContactItem
                 title="Instagram"
